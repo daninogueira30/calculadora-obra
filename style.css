@@ -1,0 +1,135 @@
+/* Variáveis de cor: mudando aqui, muda o site inteiro */
+:root {
+  --cor-principal: #1f3a5f;
+  --cor-destaque: #e8a33d;
+  --cor-fundo: #f4f6f9;
+  --cor-card: #ffffff;
+  --cor-texto: #2b2b2b;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.5;
+}
+
+header {
+  background: var(--cor-principal);
+  color: #fff;
+  text-align: center;
+  padding: 40px 16px;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+/* Grid: os cards se reorganizam sozinhos conforme o tamanho da tela */
+main {
+  max-width: 1100px;
+  margin: 32px auto;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: var(--cor-card);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-top: 4px solid var(--cor-destaque);
+}
+
+.card h2 {
+  color: var(--cor-principal);
+  margin-bottom: 4px;
+}
+
+.descricao {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  font-weight: 600;
+  gap: 4px;
+}
+
+input,
+select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid var(--cor-destaque);
+  border-color: transparent;
+}
+
+button {
+  background: var(--cor-principal);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #16304f;
+}
+
+/* O resultado começa escondido e aparece quando recebe a classe "visivel" */
+.resultado {
+  display: none;
+  margin-top: 16px;
+  padding: 16px;
+  background: #fdf5e8;
+  border-radius: 8px;
+}
+
+.resultado.visivel {
+  display: block;
+}
+
+.resultado li {
+  list-style: none;
+  padding: 4px 0;
+}
+
+.resultado strong {
+  color: var(--cor-principal);
+}
+
+footer {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #666;
+  padding: 24px 16px 40px;
+}

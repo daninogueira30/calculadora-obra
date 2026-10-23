@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Materiais de Obra</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Calculadora de Materiais de Obra</h1>
+    <p>Estime a quantidade de materiais a partir das medidas do seu projeto.</p>
+  </header>
+
+  <main>
+    <!-- CARD 1: Concreto -->
+    <section class="card">
+      <h2>Concreto</h2>
+      <p class="descricao">Para lajes, vigas e sapatas. Traço 1:2:3 (cimento : areia : brita).</p>
+      <form id="form-concreto">
+        <label>Comprimento (m)
+          <input type="number" id="concreto-comprimento" min="0" step="0.01" required>
+        </label>
+        <label>Largura (m)
+          <input type="number" id="concreto-largura" min="0" step="0.01" required>
+        </label>
+        <label>Altura / espessura (m)
+          <input type="number" id="concreto-altura" min="0" step="0.01" required>
+        </label>
+        <button type="submit">Calcular</button>
+      </form>
+      <div class="resultado" id="resultado-concreto"></div>
+    </section>
+
+    <!-- CARD 2: Tijolos / blocos -->
+    <section class="card">
+      <h2>Tijolos e blocos</h2>
+      <p class="descricao">Quantidade de peças para levantar uma parede.</p>
+      <form id="form-tijolos">
+        <label>Comprimento da parede (m)
+          <input type="number" id="parede-comprimento" min="0" step="0.01" required>
+        </label>
+        <label>Altura da parede (m)
+          <input type="number" id="parede-altura" min="0" step="0.01" required>
+        </label>
+        <label>Área de portas e janelas (m²)
+          <input type="number" id="parede-aberturas" min="0" step="0.01" value="0">
+        </label>
+        <label>Tipo de peça
+          <select id="tipo-tijolo">
+            <option value="17">Tijolo baiano 9×19×29 cm (17 por m²)</option>
+            <option value="12.5">Bloco de concreto 14×19×39 cm (12,5 por m²)</option>
+            <option value="50">Tijolo maciço 5×10×20 cm (50 por m²)</option>
+          </select>
+        </label>
+        <button type="submit">Calcular</button>
+      </form>
+      <div class="resultado" id="resultado-tijolos"></div>
+    </section>
+
+    <!-- CARD 3: Argamassa de reboco -->
+    <section class="card">
+      <h2>Argamassa de reboco</h2>
+      <p class="descricao">Volume de argamassa para revestir uma parede.</p>
+      <form id="form-reboco">
+        <label>Área a rebocar (m²)
+          <input type="number" id="reboco-area" min="0" step="0.01" required>
+        </label>
+        <label>Espessura do reboco (cm)
+          <input type="number" id="reboco-espessura" min="0" step="0.1" value="2" required>
+        </label>
+        <button type="submit">Calcular</button>
+      </form>
+      <div class="resultado" id="resultado-reboco"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Todos os cálculos incluem 10% de perda. Os valores são estimativas: confirme com um profissional antes de comprar.</p>
+    <p>Desenvolvido por Daniela Nogueira</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
